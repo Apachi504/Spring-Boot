@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main>
+<div class="album py-5 bg-light">
+    <div class="container " style="height: 450px">
+
+        <div class="d-flex flex-row">
+            <div class="p-6">
+                <div class="card shadow-sm mr-3" style="height: 253px">
+
+                    <div class="col-md-8 mx-auto">
+                        <h2 class="fw-light">Необходимая функциональность</h2>
+                        <p class="lead text-muted">Добавление продукта<br>
+                            Удаление продукта <br>
+                            Редактирование описания продукта <br>
+                            Поиск продукта по названию</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="card shadow-sm">
+
+                    <div class="col-md-8 mx-auto">
+                        <h2 class="fw-light">Технологии для использования</h2>
+                        <p class="lead text-muted">Java 15<br>
+                            Spring Boot 2.4.1 <br>
+                            База данных - MySQL Open Server<br>
+                            Сборка проекта - Maven <br>
+                            Технология для отображения - HTML,CSS,Bootstrap,Thymeleaf
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</main>
+
+
+</body>
+</html>

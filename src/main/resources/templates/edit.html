@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование товара</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+
+<main>
+    <div class="container mt-5 mb-5">
+        <h1>Редактирование товара</h1>
+        <div th:each="el : ${catalog}" class="mb-5">
+        <form method="post" style="width: 600px">
+            <input type="text" th:value="${el.title}" name="title" placeholder="Введите название товара" class="form-control"><br>
+            <input type="text" th:value="${el.price}" name="price" placeholder=" Введите стоимость товара" class="form-control"><br>
+            <input type="text" th:value="${el.anons}" name="anons" placeholder=" Введите описание товара" class="form-control"><br>
+            <textarea  name="text" placeholder="Введите полное описание товара" class="form-control" th:text="${el.text}" /><br>
+            <!--            <label for="exampleFormControlFile1">Выберите фотографию</label><br>-->
+            <!--            <input type="file" class="form-control-file" id="exampleFormControlFile1"><br>-->
+            <button type="submit" class="btn btn-success ps-2">Принять изменения</button>
+            <br>
+        </form>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

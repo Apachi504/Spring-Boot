@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+
+<main>
+    <div class="container mt-5 mb-5 pb-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="row">
+                    <div th:each="el : ${catalogs}" class="card shadow-sm mb-5">
+                            <h3 th:text="${el.title}"/>
+                        <div class="card-body">
+                            <p th:text="${el.anons}" class="card-text"/>
+                            <div class="d-grid justify-content-between align-items-center">
+
+                                    <a  class="btn btn-warning me-1"  th:href="'/main/' +${el.id}">Просмотр</a>
+                                    <a  class="btn btn-warning me-1"  th:href="'/main/' +${el.id} +'/edit'">Редактировать</a>
+
+
+                            </div>
+                            <form th:action="'/main/' +${el.id} +'/remove'" method="post">
+                                <button  class="btn btn-warning" type="submit">Удалить</button>
+                            </form>
+                            <small th:text="${el.price} + '$'" class="text-muted"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+
+
+</body>
+</html>
